@@ -90,5 +90,4 @@ module.exports = {
   getEmployee,
   getSalary,
   employees,
-  salaries,
 };

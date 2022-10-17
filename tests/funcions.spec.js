@@ -4,7 +4,6 @@ const {
   getEmployee,
   getSalary,
   employees,
-  salaries,
 } = require('../app/funcions');
 
 // retornaPromesa
