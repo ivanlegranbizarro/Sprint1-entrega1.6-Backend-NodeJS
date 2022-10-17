@@ -6,6 +6,7 @@ const {
   employees,
   cridaPromesa,
   doble,
+  Persona,
 } = require('../app/funcions');
 
 // retornaPromesa
@@ -108,5 +109,24 @@ describe('Comprovem que la funció doble compleixi amb les expectatives emprant 
     setTimeout(doble, 2000);
     jest.advanceTimersByTime(2000);
     expect(doble).toHaveBeenCalled();
+  });
+});
+
+/*
+Crea un mock que comprovi les crides al constructor de la classe Persona i al seu mètode. dirNom() en l'exercici Classes & Arrow Functions - N2 E2 i testeja que funcionen.
+*/
+
+describe('Comprovem que la funció Persona compleixi amb les expectatives', () => {
+  test('should call the constructor and the method', () => {
+    const Persona = jest.fn();
+    Persona.mockImplementation(() => {
+      return {
+        dirNom: jest.fn(),
+      };
+    });
+    const persona = new Persona();
+    persona.dirNom();
+    expect(Persona).toHaveBeenCalled();
+    expect(persona.dirNom).toHaveBeenCalled();
   });
 });
