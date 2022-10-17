@@ -144,7 +144,7 @@ describe('Comprovem que la classe Animal compleixi amb les expectatives', () => 
     }).toThrow();
   });
 
-  test('the function crearAnimal should create a new instance of Animal if animal if the name of animal is: Gos, Gat or Cavall', () => {
+  test('the function crearAnimal should create a new instance of Animal if animal if the name of animal is: Gos/Gat/Cavall', () => {
     const animal = crearAnimal('Gat');
     expect(animal).toBeInstanceOf(Animal);
   });
