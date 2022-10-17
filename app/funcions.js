@@ -109,6 +109,21 @@ async function cridaPromesa(num) {
   }
 }
 
+/*
+Crea una funció que retorni el doble del número que li passa com a paràmetre després de 2 segons.
+*/
+
+function doble(num) {
+  return new Promise((resolve, reject) => {
+    if (typeof num === 'number') {
+      resolve(num * 2);
+    } else {
+      reject('El paràmetre no és un número');
+    }
+  });
+}
+
+
 module.exports = {
   retornaPromesa,
   arrowFunction,
@@ -116,4 +131,5 @@ module.exports = {
   getSalary,
   employees,
   cridaPromesa,
+  doble,
 };

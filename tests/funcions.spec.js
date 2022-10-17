@@ -5,6 +5,7 @@ const {
   getSalary,
   employees,
   cridaPromesa,
+  doble,
 } = require('../app/funcions');
 
 // retornaPromesa
@@ -92,5 +93,20 @@ describe('Comprovem que la funció cridaPromesa compleixi amb les expectatives',
     expect(message).toEqual(
       expect.stringContaining("La promesa s'ha resolt correctament")
     );
+  });
+});
+
+describe('Comprovem que la funció doble compleixi amb les expectatives emprant Jest Fake Timers quan calgui', () => {
+  test('should return the double of the number passed', async () => {
+    const num = await doble(2);
+    expect(num).toEqual(4);
+  });
+
+  test('should being called after 2 seconds', async () => {
+    jest.useFakeTimers();
+    const doble = jest.fn();
+    setTimeout(doble, 2000);
+    jest.advanceTimersByTime(2000);
+    expect(doble).toHaveBeenCalled();
   });
 });
