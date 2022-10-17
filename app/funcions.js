@@ -88,7 +88,7 @@ const getSalary = (empleat) => {
 Crea una nova funció asíncrona que cridi a una altra que retorni una Promise que efectuï la seva funció resolve() després de 2 segons de la seva invocació.
 */
 
-function retornaPromesaDosSegonds(num) {
+function retornaPromesaDosSegons(num) {
   return new Promise((resolve, reject) => {
     if (num > 0.5) {
       setTimeout(() => {
@@ -102,7 +102,7 @@ function retornaPromesaDosSegonds(num) {
 
 async function cridaPromesa(num) {
   try {
-    let resultat = await retornaPromesaDosSegonds(num);
+    let resultat = await retornaPromesaDosSegons(num);
     return resultat;
   } catch (error) {
     return error;
