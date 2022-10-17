@@ -84,10 +84,38 @@ const getSalary = (empleat) => {
   });
 };
 
+/*
+Crea una nova funció asíncrona que cridi a una altra que retorni una Promise que efectuï la seva funció resolve() després de 2 segons de la seva invocació.
+*/
+
+function retornaPromesaDosSegonds(num) {
+  return new Promise((resolve, reject) => {
+    if (num > 0.5) {
+      setTimeout(() => {
+        resolve("La promesa s'ha resolt correctament amb el número " + num);
+      }, 2000);
+    } else {
+      reject("La promesa no s'ha pogut resoldre amb el número " + num);
+    }
+  });
+}
+
+async function cridaPromesa(num) {
+  try {
+    let resultat = await retornaPromesaDosSegonds(num);
+    return resultat;
+  } catch (error) {
+    return error;
+  }
+}
+
+
 module.exports = {
   retornaPromesa,
   arrowFunction,
   getEmployee,
   getSalary,
   employees,
+  retornaPromesaDosSegonds,
+  cridaPromesa,
 };
