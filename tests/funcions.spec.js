@@ -6,7 +6,8 @@ const {
   employees,
   cridaPromesa,
   doble,
-  Persona,
+  Animal,
+  crearAnimal,
 } = require('../app/funcions');
 
 // retornaPromesa
@@ -97,6 +98,9 @@ describe('Comprovem que la funció cridaPromesa compleixi amb les expectatives',
   });
 });
 
+/*
+Verifica mitjançant tests l'execució de l'exercici Async / Await N2 E1 utilitzant Jest Fake Timers.
+*/
 describe('Comprovem que la funció doble compleixi amb les expectatives emprant Jest Fake Timers quan calgui', () => {
   test('should return the double of the number passed', async () => {
     const num = await doble(2);
@@ -113,9 +117,8 @@ describe('Comprovem que la funció doble compleixi amb les expectatives emprant 
 });
 
 /*
-Crea un mock que comprovi les crides al constructor de la classe Persona i al seu mètode. dirNom() en l'exercici Classes & Arrow Functions - N2 E2 i testeja que funcionen.
-*/
-
+  Crea un mock que comprovi les crides al constructor de la classe Persona i al seu mètode. dirNom() en l'exercici Classes & Arrow Functions - N2 E2 i testeja que funcionen.
+  */
 describe('Comprovem que la funció Persona compleixi amb les expectatives', () => {
   test('should call the constructor and the method', () => {
     const Persona = jest.fn();
@@ -128,5 +131,21 @@ describe('Comprovem que la funció Persona compleixi amb les expectatives', () =
     persona.dirNom();
     expect(Persona).toHaveBeenCalled();
     expect(persona.dirNom).toHaveBeenCalled();
+  });
+});
+
+/*
+Verifica mitjançant tests la creació d'instàncies de la classe abstracta de l'exercici Classes & Arrow Functions N3 E1.
+*/
+describe('Comprovem que la classe Animal compleixi amb les expectatives', () => {
+  test('should throw an error if the class is instantiated', () => {
+    expect(() => {
+      new Animal();
+    }).toThrow();
+  });
+
+  test('the function crearAnimal should create a new instance of Animal if animal if the name of animal is: Gos, Gat or Cavall', () => {
+    const animal = crearAnimal('Gat');
+    expect(animal).toBeInstanceOf(Animal);
   });
 });

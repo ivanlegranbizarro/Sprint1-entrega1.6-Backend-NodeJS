@@ -136,6 +136,49 @@ class Persona {
   }
 }
 
+/*
+Escriu una function creadora d'objectes que faci instàncies d'una classe abstracta. Invoca-la amb diferents definicions.
+*/
+
+class Animal {
+  constructor() {
+    if (this.constructor === Animal) {
+      throw new Error('No es pot instanciar una classe abstracta');
+    }
+  }
+}
+
+function crearAnimal(nombre) {
+  switch (nombre) {
+    case 'Gos':
+      class Gos extends Animal {
+        constructor() {
+          super();
+          this.nombre = 'Gos';
+        }
+      }
+      return new Gos();
+    case 'Gat':
+      class Gat extends Animal {
+        constructor() {
+          super();
+          this.nombre = 'Gat';
+        }
+      }
+      return new Gat();
+    case 'Cavall':
+      class Cavall extends Animal {
+        constructor() {
+          super();
+          this.nombre = 'Cavall';
+        }
+      }
+      return new Cavall();
+    default:
+      throw new Error('Aquest animal no existeix');
+  }
+}
+
 module.exports = {
   retornaPromesa,
   arrowFunction,
@@ -144,5 +187,6 @@ module.exports = {
   employees,
   cridaPromesa,
   doble,
-  Persona,
+  Animal,
+  crearAnimal,
 };
