@@ -124,19 +124,6 @@ function doble(num) {
 }
 
 /*
-Crea una classe "Persona" que rebi un paràmetre 'nom' en ser instanciada. La classe inclourà un mètode dirNom que imprimeixi per consola el paràmetre 'nom'. Invoca el mètode dirNom des de fora de la classe.
-*/
-
-class Persona {
-  constructor(nom) {
-    this.nom = nom;
-  }
-  dirNom() {
-    this.nom;
-  }
-}
-
-/*
 Escriu una function creadora d'objectes que faci instàncies d'una classe abstracta. Invoca-la amb diferents definicions.
 */
 
