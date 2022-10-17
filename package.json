@@ -1,0 +1,21 @@
+{
+  "name": "entrega1.6",
+  "version": "1.0.0",
+  "description": "Exercici 6 de l' sprint 1",
+  "main": "index.js",
+  "scripts": {
+    "test": "jest"
+  },
+  "keywords": [
+    "Node",
+    "Express",
+    "Testing",
+    "Jests"
+  ],
+  "author": "Iván Legrán",
+  "license": "ISC",
+  "devDependencies": {
+    "jest": "^29.2.0",
+    "supertest": "^6.3.0"
+  }
+}
