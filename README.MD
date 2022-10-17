@@ -1,6 +1,6 @@
 # Sprint 1 (entrega 1.6)
 
-Aquest exercici té com a objectiu asolir les capacitats per poder fer *testing* dels nostres projectes.
+Aquest exercici té com a objectiu assolir les capacitats per poder fer *testing* dels nostres projectes.
 
 
 # Instruccions per executar el projecte
