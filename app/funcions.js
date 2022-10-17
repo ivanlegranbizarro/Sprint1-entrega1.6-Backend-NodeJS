@@ -109,13 +109,11 @@ async function cridaPromesa(num) {
   }
 }
 
-
 module.exports = {
   retornaPromesa,
   arrowFunction,
   getEmployee,
   getSalary,
   employees,
-  retornaPromesaDosSegonds,
   cridaPromesa,
 };

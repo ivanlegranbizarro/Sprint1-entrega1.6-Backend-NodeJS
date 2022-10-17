@@ -4,7 +4,6 @@ const {
   getEmployee,
   getSalary,
   employees,
-  retornaPromesaDosSegonds,
   cridaPromesa,
 } = require('../app/funcions');
 
