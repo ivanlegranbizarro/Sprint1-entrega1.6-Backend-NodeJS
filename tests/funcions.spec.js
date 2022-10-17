@@ -80,16 +80,17 @@ describe('Comprovem que la funció getSalary compleixi amb les expectatives', ()
 // cridaPromesa
 
 describe('Comprovem que la funció cridaPromesa compleixi amb les expectatives', () => {
-  test('should return a message depending on the parameter passed', () => {
-    expect(cridaPromesa(0.6)).resolves.toEqual(
-      expect.stringContaining("La promesa s'ha resolt correctament")
-    );
-  });
-
   test('should return a message depending on the parameter passed', async () => {
     const message = await cridaPromesa(0.4);
     expect(message).toEqual(
       expect.stringContaining("La promesa no s'ha pogut resoldre")
+    );
+  });
+
+  test('should return a message depending on the parameter passed', async () => {
+    const message = await cridaPromesa(0.6);
+    expect(message).toEqual(
+      expect.stringContaining("La promesa s'ha resolt correctament")
     );
   });
 });
