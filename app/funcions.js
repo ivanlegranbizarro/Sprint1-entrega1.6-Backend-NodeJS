@@ -174,7 +174,7 @@ const fs = require("fs");
 
 const getEmployeeJSON = (id) => {
   return new Promise((resolve, reject) => {
-    fs.readFile("./employees.json", "utf8", (err, data) => {
+    fs.readFile("../employees.json", "utf8", (err, data) => {
       if (err) {
         reject(err);
       } else {
@@ -192,7 +192,7 @@ const getEmployeeJSON = (id) => {
 
 const getSalaryJSON = (empleat) => {
   return new Promise((resolve, reject) => {
-    fs.readFile("./salaries.json", "utf8", (err, data) => {
+    fs.readFile("../salaries.json", "utf8", (err, data) => {
       if (err) {
         reject(err);
       } else {
@@ -229,4 +229,6 @@ module.exports = {
   doble,
   Animal,
   crearAnimal,
+  getEmployeeJSON,
+  getSalaryJSON,
 };
