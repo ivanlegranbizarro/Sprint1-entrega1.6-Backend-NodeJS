@@ -219,6 +219,22 @@ const getSalaryJSON = (empleat) => {
 //   );
 // });
 
+/*
+Utilitzant com a base l'exercici Async / Await, crea tests que forcin errors de funcionament i verifiqui que els errors llançats són els esperats.
+*/
+
+const getEmployeeAndSalary = async (id) => {
+  try {
+    const employee = await getEmployee(id);
+    const salary = await getSalary(employee);
+    console.log(
+      `El nom de l'empleat és ${employee.name} i el seu salari és ${salary.salary}`
+    );
+  } catch (error) {
+    console.log(error);
+  }
+};
+
 module.exports = {
   retornaPromesa,
   arrowFunction,
@@ -231,4 +247,5 @@ module.exports = {
   crearAnimal,
   getEmployeeJSON,
   getSalaryJSON,
+  getEmployeeAndSalary,
 };

@@ -10,6 +10,7 @@ const {
   crearAnimal,
   getEmployeeJSON,
   getSalaryJSON,
+  getEmployeeAndSalary,
 } = require("../app/funcions");
 
 // retornaPromesa
@@ -152,7 +153,6 @@ describe("Comprovem que la classe Animal compleixi amb les expectatives", () => 
   });
 });
 
-
 /*
 Crea tests que demostrin la correcta execució de l'exercici fent un mock del fitxer JSON
 */
@@ -212,6 +212,24 @@ describe("Comprovem que la funció getEmployeeJSON i getSalaryJSON compleixin am
     });
     expect(getSalaryJSON(3)).rejects.toEqual(
       expect.stringContaining("No s'ha trobat l'empleat")
+    );
+  });
+});
+
+/*
+Utilitzant com a base l'exercici Async / Await, crea tests que forcin errors de funcionament i verifiqui que els errors llançats són els esperats.
+*/
+
+describe("Comprovem que la funció getEmployeeAndSalary compleixi amb les expectatives", () => {
+  test("should fail if the employee does not exist", () => {
+    expect(getEmployeeAndSalary(4)).rejects.toEqual(
+      expect.stringContaining("No s'ha trobat l'empleat")
+    );
+  });
+
+  test("should fail if the salary does not exist", () => {
+    expect(getEmployeeAndSalary(3)).rejects.toEqual(
+      expect.stringContaining("No s'ha trobat el salari")
     );
   });
 });
