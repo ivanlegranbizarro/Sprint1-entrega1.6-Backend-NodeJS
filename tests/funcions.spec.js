@@ -1,3 +1,4 @@
+const { supportedPropertyNames } = require( "jsdom/lib/jsdom/living/generated/utils" );
 const {
   retornaPromesa,
   arrowFunction,
@@ -152,6 +153,12 @@ describe("Comprovem que la classe Animal compleixi amb les expectatives", () => 
     expect(animal).toBeInstanceOf(Animal);
   });
 });
+
+/*
+Omar, sé que els tests del nivell 3 els tinc malament, però no aconsegueixo que funcionin i, per tant, te'ls envio per veure si amb les teves correccions m'oriento una mica. Disculpa les molèsties.
+*/
+
+
 
 /*
 Crea tests que demostrin la correcta execució de l'exercici fent un mock del fitxer JSON
