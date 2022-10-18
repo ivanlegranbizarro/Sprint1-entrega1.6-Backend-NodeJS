@@ -190,7 +190,7 @@ const getEmployeeJSON = (id) => {
   });
 };
 
-const getSalaryJSON = async (empleat) => {
+const getSalaryJSON = (empleat) => {
   return new Promise((resolve, reject) => {
     fs.readFile("./salaries.json", "utf8", (err, data) => {
       if (err) {
@@ -208,16 +208,16 @@ const getSalaryJSON = async (empleat) => {
   });
 };
 
-getEmployeeJSON(1).then((empleat) => {
-  getSalaryJSON(empleat).then(
-    (salari) => {
-      console.log("El salari de " + empleat.name + " és " + salari.salary);
-    },
-    (err) => {
-      console.log(err);
-    }
-  );
-});
+// getEmployeeJSON(1).then((empleat) => {
+//   getSalaryJSON(empleat).then(
+//     (salari) => {
+//       console.log("El salari de " + empleat.name + " és " + salari.salary);
+//     },
+//     (err) => {
+//       console.log(err);
+//     }
+//   );
+// });
 
 module.exports = {
   retornaPromesa,
