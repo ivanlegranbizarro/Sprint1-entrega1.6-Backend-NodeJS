@@ -152,6 +152,7 @@ describe("Comprovem que la classe Animal compleixi amb les expectatives", () => 
   });
 });
 
+
 /*
 Crea tests que demostrin la correcta execució de l'exercici fent un mock del fitxer JSON
 */
