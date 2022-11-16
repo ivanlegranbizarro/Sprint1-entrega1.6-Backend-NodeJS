@@ -69,8 +69,10 @@ function retornaPromesa ( num ) {
   return new Promise( ( resolve, reject ) => {
     if ( num > 0.5 ) {
       resolve( "La promesa s'ha resolt correctament amb el número " + num );
-    } else {
+    } else if ( num ) {
       reject( "La promesa no s'ha pogut resoldre amb el número " + num );
+    } else {
+      reject( "La promesa no s'ha pogut resoldre amb el número undefined" );
     }
   } );
 }
@@ -80,11 +82,15 @@ Crea una arrow function que rebi un paràmetre i una funció callback i li passi
 */
 
 const arrowFunction = ( param, missatge ) => {
-  if ( param == 'Iván' ) {
-    return missatge( 'Hola, Iván' );
-  } else {
-    return missatge( 'No ets Iván. Eliminar intrús' );
+  if ( param && typeof param === 'string' ) {
+    if ( param == 'Iván' ) {
+      return missatge( 'Hola, ' + param );
+    } else {
+      return missatge( 'No ets Iván. Eliminar intrús' );
+    }
   }
+  missatge = 'No has passat cap paràmetre';
+  return missatge;
 };
 
 
@@ -146,9 +152,10 @@ const getSalary = ( empleat ) => {
     } else {
       reject( "No s'ha trobat l'empleat" );
     }
+
+    reject( "No s'ha trobat l'empleat" );
   } );
 };
-
 
 /*
 Crea una nova funció asíncrona que cridi a una altra que retorni una Promise que efectuï la seva funció resolve() després de 2 segons de la seva invocació.

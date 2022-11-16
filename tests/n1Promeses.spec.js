@@ -7,6 +7,9 @@ describe( 'comprovem si la funció retornaPromesa compleix amb les expectatives'
   test( 'si li passem un número inferior a 0.5, la promesa es resolt amb error', () => {
     expect( retornaPromesa( 0.4 ) ).rejects.toBe( 'La promesa no s\'ha pogut resoldre amb el número 0.4' );
   } );
+  test( 'si no li passem cap paràmetre, la promesa es resolt amb error', () => {
+    expect( retornaPromesa() ).rejects.toBe( 'La promesa no s\'ha pogut resoldre amb el número undefined' );
+  } );
 } );
 
 
@@ -17,6 +20,9 @@ describe( 'comprovem si la funció arrowFunction compleix amb les expectatives',
 
   test( 'si el paràmetre que li passem no és la paraula Iván, la promesa hauria de fallar i dir-te que ets un intrús xD', () => {
     expect( arrowFunction( 'Pepe', missatge => missatge ) ).toEqual( 'No ets Iván. Eliminar intrús' );
+  } );
+  test( 'si no li passem cap paràmetre, la promesa hauria de fallar i indicar-te que no has passat cap paràmetre', () => {
+    expect( arrowFunction( missatge => missatge ) ).toEqual( 'No has passat cap paràmetre' );
   } );
 } );
 
