@@ -30,7 +30,7 @@ describe( 'Comprovem que la funció de resta compleixi amb les expectatives', ()
     expect( resta( 1, 2, 3 ) ).toBe( -4 );
   } );
   test( 'should fail if the arguments are not numbers', () => {
-    expect( resta( 1, 'garrafa', 3 ) ).toBeNaN();
+    expect( resta( 1, 'Voll-Damm', 3 ) ).toBeNaN();
   } );
 } );
 
@@ -51,6 +51,9 @@ describe( 'Comprovem que la funció de divisio compleixi amb les expectatives', 
   test( 'should return "No es pot dividir per 0" if one of the arguments is 0', () => {
     expect( divisio( 1, 0 ) ).toBe( 'No es pot dividir per 0' );
   } );
+  test( 'should fail if the arguments are not numbers', () => {
+    expect( divisio( 1, 'Voll-Damm', 3 ) ).toBeNaN();
+  } );
 } );
 
 describe( 'Comprovem que la funció de multiplicacio compleixi amb les expectatives', () => {
@@ -64,5 +67,8 @@ describe( 'Comprovem que la funció de multiplicacio compleixi amb les expectati
 
   test( 'should return the sum of all the arguments passed', () => {
     expect( multiplicacio( 4, 2 ) ).toBe( 8 );
+  } );
+  test( 'should fail if the arguments are not numbers', () => {
+    expect( multiplicacio( 1, 'Voll-Damm', 3 ) ).toBeNaN();
   } );
 } );

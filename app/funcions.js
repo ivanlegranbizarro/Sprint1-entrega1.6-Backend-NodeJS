@@ -44,6 +44,7 @@ function divisio () {
   return resultat;
 }
 
+
 function multiplicacio () {
   if ( arguments.length === 0 ) {
     return 0;
@@ -57,6 +58,7 @@ function multiplicacio () {
   }
   return resultat;
 }
+
 
 
 /*
