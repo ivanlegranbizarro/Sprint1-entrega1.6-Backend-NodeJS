@@ -29,6 +29,9 @@ describe( 'Comprovem que la funció de resta compleixi amb les expectatives', ()
   test( 'should return the sum of all the arguments passed', () => {
     expect( resta( 1, 2, 3 ) ).toBe( -4 );
   } );
+  test( 'should fail if the arguments are not numbers', () => {
+    expect( resta( 1, 'garrafa', 3 ) ).toBeNaN();
+  } );
 } );
 
 

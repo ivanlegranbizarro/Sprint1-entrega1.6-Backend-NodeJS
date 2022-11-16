@@ -8,7 +8,6 @@ function suma () {
       resultat += arguments[ i ];
     }
   }
-
   return resultat;
 }
 
