@@ -31,8 +31,8 @@ describe( 'comprovem si la funció getEmployee compleix amb les expectatives', (
     expect( getEmployee( 1 ) ).resolves.toMatchObject( { id: 1, name: 'Linus Torvalds' } );
   } );
   test( 'si li passem un id que no existeix, la promesa es resoldre amb error', () => { expect( getEmployee( 5 ) ).rejects.toEqual( 'No s\'ha trobat l\'empleat' ); } );
+  // TODO 1: comprovar que si no li passem cap paràmetre, la promesa es resoldre amb error
 } );
-
 
 describe( 'Comprovem que la funció getSalary compleixi amb les expectatives', () => {
   test( 'ha de retornat un objecte amb el salari de l\'empleat', () => {
