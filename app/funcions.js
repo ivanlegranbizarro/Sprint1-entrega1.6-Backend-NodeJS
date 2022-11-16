@@ -6,6 +6,7 @@ function suma () {
   return resultat;
 }
 
+
 function resta () {
   if ( arguments.length === 0 ) {
     return 0;

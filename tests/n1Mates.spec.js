@@ -12,6 +12,9 @@ describe( 'Comprovem que la funció de suma compleixi amb les expectatives', () 
   test( 'should return the sum of all the arguments passed', () => {
     expect( suma( 1, 2, 3 ) ).toBe( 6 );
   } );
+  test( 'should fail if the arguments are not numbers', () => {
+    expect( suma( 1, '2', 3 ) ).toBe( 6 );
+  } );
 } );
 
 describe( 'Comprovem que la funció de resta compleixi amb les expectatives', () => {
