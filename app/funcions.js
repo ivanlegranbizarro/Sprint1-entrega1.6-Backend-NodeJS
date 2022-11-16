@@ -1,10 +1,17 @@
 function suma () {
   let resultat = 0;
+
   for ( let i = 0; i < arguments.length; i++ ) {
-    resultat += arguments[ i ];
+    if ( typeof arguments[ i ] !== 'number' ) {
+      return 'Els paràmetres han de ser números';
+    } else {
+      resultat += arguments[ i ];
+    }
   }
+
   return resultat;
 }
+
 
 
 function resta () {

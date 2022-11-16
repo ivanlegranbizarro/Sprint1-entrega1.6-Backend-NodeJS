@@ -13,7 +13,7 @@ describe( 'Comprovem que la funció de suma compleixi amb les expectatives', () 
     expect( suma( 1, 2, 3 ) ).toBe( 6 );
   } );
   test( 'should fail if the arguments are not numbers', () => {
-    expect( suma( 1, '2', 3 ) ).toBe( 6 );
+    expect( suma( 1, '2', 3 ) ).toBe( 'Els paràmetres han de ser números' );
   } );
 } );
 
