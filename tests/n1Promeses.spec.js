@@ -77,4 +77,10 @@ describe( 'Comprovem que la funció cridaPromesa compleixi amb les expectatives'
       expect.stringContaining( "La promesa s'ha resolt correctament" )
     );
   } );
+  test( 'la promesa ha de ser rebutjada si no li passem cap paràmetre', async () => {
+    const message = await cridaPromesa();
+    expect( message ).toEqual(
+      expect.stringContaining( "La promesa no s'ha pogut resoldre" )
+    );
+  } );
 } );
