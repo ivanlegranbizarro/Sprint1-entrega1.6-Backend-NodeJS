@@ -1,10 +1,16 @@
-const {  doble, Animal, crearAnimal } = require( '../app/funcions' );
+const { doble, Animal, crearAnimal } = require( '../app/funcions' );
 
 
 describe( 'Comprovem que la funció doble compleixi amb les expectatives emprant Jest Fake Timers quan calgui', () => {
   test( 'ha de doblar el número passat per paràmetre', async () => {
     const num = await doble( 2 );
     expect( num ).toEqual( 4 );
+  } );
+
+  test( 'si no li passem cap paràmetre, ha de retornar un error', async () => {
+    const doble = jest.fn( () => {
+      expect( doble ).toThrow( 'El paràmetre no és un número' );
+    } );
   } );
 
   test( 'la promesa ha de ser trucada al cap de dos segons', async () => {
