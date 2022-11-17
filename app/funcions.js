@@ -127,15 +127,15 @@ let salaries = [
 
 const getEmployee = ( id ) => {
   return new Promise( ( resolve, reject ) => {
-    if(id && typeof id === 'number') {
-      let employee = employees.find((e) => e.id === id);
-      if(employee) {
-        resolve(employee);
+    if ( id && typeof id === 'number' ) {
+      let employee = employees.find( ( e ) => e.id === id );
+      if ( employee ) {
+        resolve( employee );
       } else {
-        reject("No s'ha trobat l'empleat");
+        reject( "No s'ha trobat l'empleat" );
       }
     } else {
-      reject("No has passat cap paràmetre");
+      reject( "No has passat cap paràmetre" );
     }
   } );
 };
@@ -154,13 +154,15 @@ const getSalary = ( empleat ) => {
       } else {
         reject( "No s'ha trobat el salari" );
       }
-    } else {
+    } else if (!empleat) {
       reject( "No s'ha trobat l'empleat" );
+    } else {
+      reject( "No has passat cap paràmetre" );
     }
-
-    reject( "No s'ha trobat l'empleat" );
-  } );
+  }
+  );
 };
+
 
 /*
 Crea una nova funció asíncrona que cridi a una altra que retorni una Promise que efectuï la seva funció resolve() després de 2 segons de la seva invocació.

@@ -56,6 +56,11 @@ describe( 'Comprovem que la funció getSalary compleixi amb les expectatives', (
       expect.stringContaining( "No s'ha trobat l'empleat" )
     );
   } );
+  // test( 'Ha de rebutjar la promesa si no li passem cap paràmetre', () => {
+  //   expect( getSalary() ).rejects.toEqual(
+  //     expect.stringContaining( "No has passat cap paràmetre" )
+  //   );
+  // } );
 } );
 
 describe( 'Comprovem que la funció cridaPromesa compleixi amb les expectatives', () => {
