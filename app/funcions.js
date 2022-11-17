@@ -154,10 +154,8 @@ const getSalary = ( empleat ) => {
       } else {
         reject( "No s'ha trobat el salari" );
       }
-    } else if ( !empleat ) {
-      reject( "No s'ha trobat l'empleat" );
     } else {
-      reject( "No has passat cap paràmetre" );
+      reject( "No s'ha trobat l'empleat" );
     }
   }
   );
