@@ -127,14 +127,19 @@ let salaries = [
 
 const getEmployee = ( id ) => {
   return new Promise( ( resolve, reject ) => {
-    let employee = employees.find( ( e ) => e.id === id );
-    if ( employee ) {
-      resolve( employee );
+    if(id && typeof id === 'number') {
+      let employee = employees.find((e) => e.id === id);
+      if(employee) {
+        resolve(employee);
+      } else {
+        reject("No s'ha trobat l'empleat");
+      }
     } else {
-      reject( "No s'ha trobat l'empleat" );
+      reject("No has passat cap paràmetre");
     }
   } );
 };
+
 
 /*
   Crea una altra arrow function getSalary() similar a l'anterior que rebi com a paràmetre un objecte employee i retorni el seu salari.
